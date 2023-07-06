@@ -1,0 +1,13 @@
+/* body {
+    color: #000000;
+    background-color: #a892ee;
+    
+} */
+
+.container {
+    border: 5px solid #ffff;
+    padding: 25px;
+    width: 100%;
+    
+    background-color: #a892ee;
+}
