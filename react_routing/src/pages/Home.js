@@ -1,115 +1,104 @@
-// import React from "react";
-// import { useNavigate } from "react-router-dom";
 
-// function Home  ()  {
-//   const navigate = useNavigate();
-
-// //   const Homepage = () => {
-//     // navigate("/Form"); 
-
-//     return (
-//       <form>
-//         <div className="new-expense__control">
-//           <label>User-Name</label>
-//           <input type="text" className="login-field" placeholder="user-name" />
-//         </div>
-
-//         <div className="new-expense__control">
-//           <label for="contact">Contact No</label>
-//           <input
-//             id="mobile"
-//             name="mobile"
-//             type="number"
-//             ng-pattern="/^(91){1}[0-9]{8}$/"
-//             placeholder="Enter contact Number"
-//             ng-maxlength="10"
-//             ng-minlength="10"
-//             ng-model="person.mobile"
-//             required
-//           />
-//           <span class="error" ng-show="personForm.mobile.$error.required">
-//             Required number!
-//           </span>
-//           <span class="error" ng-show="personForm.mobile.$error.mobile">
-//             Invalid mobile!
-//           </span>
-//         </div>
-
-//         <div className="new-expense__control">
-//           <label>DOB</label>
-//           <input
-//             type="date"
-//             min="1999-01-01"
-//             max="2023-07-01"
-//             className="login-field"
-//           />
-//         </div>
-
-//         <div className="new-expense__actions">
-//           <button type="submit">Login</button>
-         
-//         </div>
-        
-//       </form>
-//     );
-// //   };
-// };
-// export default Home;
-
-import React from "react";
+import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
+import ShowPassword from "../assets/images/show-password.png"
+import HidePassword from "../assets/images/HidePassword.jpg"
+import './Home.css'
+import { useStores } from "../store";
 
 function Home() {
+  // const {Frontlogin} = useStores();
   const navigate = useNavigate();
+  const [username, setUserName]= useState('')
+  const [passwordVisible, setPasswordVisible] = useState(false);
+  const [password, setPassword] = useState("");
 
+  const togglePasswordVisibility = () => {
+    setPasswordVisible(!passwordVisible);
+  };
+
+  // const handleSubmit =async (event) => {
+  //   event.preventDefault();
+  //   let paylaod={
+  //     contact: username,
+  //     password: password
+  //   }
+  //   await Frontlogin.login(paylaod, (response)=>{
+  //     console.log(response)
+  //   })
+  //   navigate("/Form");
+  // };
   const handleSubmit = (event) => {
     event.preventDefault();
     navigate("/Form");
   };
 
   return (
-    <form onSubmit={handleSubmit}>
+    <form onSubmit={handleSubmit} className="form">
       <div className="new-expense__control">
-        <label>User-Name</label>
-        <input type="text" className="login-field" placeholder="user-name" />
-      </div>
+        <h1>Welcome to the Gro+ Portal</h1>
+        <br />
+        <br />
+        <br />
 
-      <div className="new-expense__control">
-        <label htmlFor="contact">Contact No</label>
+        <label>User-Name</label>
+        <br />
+        <br />
+
         <input
-          id="mobile"
-          name="mobile"
-          type="number"
-          pattern="^(91){1}[0-9]{8}$"
-          placeholder="Enter contact Number"
-          maxLength="10"
-          minLength="10"
+          type="text"
+          className="login-field"
+          placeholder="user-name"
+          value={username}
+          onChange={(e)=>setUserName(e.target.value)}
           required
         />
-        <span className="error" style={{ display: "none" }}>
-          Required number!
+        <span className="error" ng-show="personForm.name.$error.required">
+
         </span>
-        <span className="error" style={{ display: "none" }}>
-          Invalid mobile!
-        </span>
+        <br />
+        <br />
+        <br />
       </div>
 
       <div className="new-expense__control">
-        <label>DOB</label>
-        <input
-          type="date"
-          min="1999-01-01"
-          max="2023-07-01"
-          className="login-field"
-        />
-      </div>
+        <label>Password</label>
+        <br />
+        <br />
 
+        <div className="password-input-container">
+          <input
+            type={passwordVisible ? "text" : "password"}
+            className="login-field"
+            placeholder="password"
+            required
+            value={password}
+            onChange={(e) => setPassword(e.target.value)}
+
+          />
+          <span
+            className="password-toggle"
+            onClick={togglePasswordVisibility}
+
+          >
+            <img
+              src={passwordVisible ?   ShowPassword: HidePassword }
+              alt={passwordVisible ? " Hide password" : "Show password" }
+              className="password-icon"
+            />
+          </span>
+        </div>
+
+        <span className="error" ng-show="personForm.password.$error.required">
+
+        </span>
+      </div>
+      <br />
+      <br />
       <div className="new-expense__actions">
-        <button type="submit">Login</button>
+        <button type="submit" >Login</button>
       </div>
     </form>
   );
 }
-
-export default Home;
-
+ export default Home;
