@@ -1,13 +1,23 @@
-/* body {
-    color: #000000;
-    background-color: #a892ee;
-    
-} */
+
 
 .container {
-    border: 5px solid #ffff;
-    padding: 25px;
-    width: 100%;
+    border: 5px solid #000000;
     
     background-color: #a892ee;
+    /* border: 1px , #ffff; */
+    padding: 6px;
+    width: 40%;
+    margin:10%;
+    margin-left: 20%;
+    border-radius: 10%;
+    margin-top: 100px;
+    
 }
+
+
+.container:hover
+{
+    background: url("https://images.unsplash.com/photo-1605080407454-5a0732020db4?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80");
+       
+}
+

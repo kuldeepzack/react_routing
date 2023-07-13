@@ -13,7 +13,6 @@ function Web() {
     <>
       <div className="background-container"></div>
       <Navbar />
-      <div className="container">
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/login" element={<Login />} />
@@ -21,7 +20,7 @@ function Web() {
           <Route path="/form" element={<Form />} />
           <Route path="/showhide" element={<Showhide />} />
         </Routes>
-      </div>
+      
     </>
   );
 }

@@ -7,7 +7,7 @@ import './Home.css'
 import { useStores } from "../store";
 
 function Home() {
-  // const {Frontlogin} = useStores();
+  const {Frontlogin} = useStores();
   const navigate = useNavigate();
   const [username, setUserName]= useState('')
   const [passwordVisible, setPasswordVisible] = useState(false);
@@ -17,23 +17,25 @@ function Home() {
     setPasswordVisible(!passwordVisible);
   };
 
-  // const handleSubmit =async (event) => {
-  //   event.preventDefault();
-  //   let paylaod={
-  //     contact: username,
-  //     password: password
-  //   }
-  //   await Frontlogin.login(paylaod, (response)=>{
-  //     console.log(response)
-  //   })
-  //   navigate("/Form");
-  // };
-  const handleSubmit = (event) => {
+  const handleSubmit =async (event) => {
     event.preventDefault();
+    let paylaod={
+      contact: username,
+      password: password
+    }
+    await Frontlogin.login(paylaod, (response)=>{
+      console.log(response)
+    })
     navigate("/Form");
   };
+  // const handleSubmit = (event) => {
+  //   event.preventDefault();
+  //   navigate("/Form");
+  // };
 
   return (
+    // <div className="background-container">
+    <div className="container">
     <form onSubmit={handleSubmit} className="form">
       <div className="new-expense__control">
         <h1>Welcome to the Gro+ Portal</h1>
@@ -99,6 +101,8 @@ function Home() {
         <button type="submit" >Login</button>
       </div>
     </form>
+    </div>
+    // </div>
   );
 }
  export default Home;

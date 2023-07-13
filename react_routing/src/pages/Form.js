@@ -3,6 +3,7 @@ import "./Form.css"
 
 const Form = () => {
   return (
+    // <div className="background-container">
     <div className="mk">
       <form name="personForm" ng-submit="sendForm()">
         <h2>
@@ -107,6 +108,8 @@ const Form = () => {
         <br />
       </form>
     </div>
+    // </div>
+
   );
 }
 export default Form;
