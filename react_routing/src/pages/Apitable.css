@@ -1,0 +1,20 @@
+.Apitable{
+    background-color: antiquewhite;
+    width: 80%;
+   
+    border-radius: 57px;
+    padding: 50px 70px;
+}
+
+
+
+.table{
+    
+ 
+    display: flex;
+    justify-content: center;
+  }
+
+  table{
+    border:3px black;
+  }

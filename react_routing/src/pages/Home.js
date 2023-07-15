@@ -1,4 +1,5 @@
 
+import { ColorRing } from  'react-loader-spinner';
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import ShowPassword from "../assets/images/show-password.png"
@@ -12,30 +13,36 @@ function Home() {
   const [username, setUserName]= useState('')
   const [passwordVisible, setPasswordVisible] = useState(false);
   const [password, setPassword] = useState("");
+  const [loading, setLoading] = useState(false);
+
 
   const togglePasswordVisibility = () => {
     setPasswordVisible(!passwordVisible);
   };
 
   const handleSubmit =async (event) => {
+    setLoading(true)
     event.preventDefault();
     let paylaod={
       contact: username,
       password: password
     }
-    await Frontlogin.login(paylaod, (response)=>{
-      console.log(response)
-    })
-    navigate("/Form");
+    setTimeout(async() => {
+      await Frontlogin.login(paylaod, (response)=>{
+        console.log(response)
+        setLoading(false);
+       
+      })
+      navigate("/Form");
+    }, 1000);
+ 
+  
   };
-  // const handleSubmit = (event) => {
-  //   event.preventDefault();
-  //   navigate("/Form");
-  // };
+
 
   return (
-    // <div className="background-container">
-    <div className="container">
+   
+    <div className="main">
     <form onSubmit={handleSubmit} className="form">
       <div className="new-expense__control">
         <h1>Welcome to the Gro+ Portal</h1>
@@ -81,7 +88,7 @@ function Home() {
           <span
             className="password-toggle"
             onClick={togglePasswordVisibility}
-
+            visible={true}
           >
             <img
               src={passwordVisible ?   ShowPassword: HidePassword }
@@ -95,14 +102,24 @@ function Home() {
 
         </span>
       </div>
-      <br />
-      <br />
+  
       <div className="new-expense__actions">
-        <button type="submit" >Login</button>
+        <button type="submit">Login{loading ? "Loading...":" "}</button>
+      
       </div>
     </form>
+    {loading && 
+        <ColorRing
+ 
+  height="90"
+  width="90"
+  ariaLabel="blocks-loading"
+  wrapperStyle={{}}
+  wrapperClass="blocks-wrapper"
+  colors={['#e15b64', '#f47e60', '#f8b26a', '#abbd81', '#849b87']}
+/>}
     </div>
-    // </div>
+  
   );
 }
  export default Home;

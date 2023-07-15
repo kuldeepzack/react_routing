@@ -21,3 +21,18 @@
 .container:hover{
   background: url("./assets/images/a1.avif");
 }
+
+
+.container {
+  border: 5px solid #000000;
+  
+  background-color: #a892ee;
+  /* border: 1px , #ffff; */
+  padding: 6px;
+  width: 40%;
+  margin:10%;
+  margin-left: 20%;
+  border-radius: 10%;
+  margin-top: 100px;
+  
+}

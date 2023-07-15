@@ -16,8 +16,11 @@ export default function Navbar() {
         <CustomLink to="/api">Api</CustomLink>
         <CustomLink to="/form">form</CustomLink>
         <CustomLink to="/">Home</CustomLink>
-        <CustomLink to="/login">Login</CustomLink>
-        <CustomLink to="/showhide">Showhide</CustomLink>
+        <CustomLink to="/Login">Login</CustomLink>
+        <CustomLink to="/Showhide">Showhide</CustomLink>
+        <CustomLink to = "/Apitable">Apitable</CustomLink>
+        <CustomLink to = "/Sortdata">Sortdata</CustomLink>
+
       </div>
     </nav>
    

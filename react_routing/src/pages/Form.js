@@ -3,8 +3,8 @@ import "./Form.css"
 
 const Form = () => {
   return (
-    // <div className="background-container">
-    <div className="mk">
+  
+    <div className="form">
       <form name="personForm" ng-submit="sendForm()">
         <h2>
           <label for="name">Name</label>
@@ -108,7 +108,7 @@ const Form = () => {
         <br />
       </form>
     </div>
-    // </div>
+
 
   );
 }

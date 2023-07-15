@@ -59,4 +59,10 @@ input.login-field {
   }
   
 
-  
+  .main{
+    background-color: antiquewhite;
+    width: 45%;
+    height: 570px;
+    border-radius: 57px;
+    padding: 30px 40px; 
+  }
