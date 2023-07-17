@@ -6,4 +6,5 @@ git remote add origin https://github.com/kuldeepzack/react_routing.git
 git push -u origin master
 
 
-![img](D:\ss1.png)
+
+![ss1](https://github.com/kuldeepzack/react_routing/assets/71119191/5a9dd41f-4990-4daa-80d6-1849647d1fa6)
