@@ -1,5 +1,5 @@
 .background-container {
-   background: url("./assets/images/abbb.avif");
+   background: url("./assets/images/abbb.jpg");
    
   /* background:url("a1.avif"); */
    background-size: cover;
@@ -7,32 +7,35 @@
   top: 0;
   right: 0;
   bottom: 0;
-  left: 50%;
+  left: 0;
   z-index: -1;
  
  
 }
 
-.background-container:hover{
+/* .background-container:hover{
   background:url("./assets/images/a1.avif")
-}
+} */
 
 
-.container:hover{
+/* .container:hover{
   background: url("./assets/images/a1.avif");
-}
+} */
 
 
 .container {
   border: 5px solid #000000;
   
-  background-color: #a892ee;
+  /* background-color: #a892ee; */
+  background-color:#F1F9F6;
+
+
   /* border: 1px , #ffff; */
-  padding: 6px;
+  padding:0px 6px 0px 0px ;
   width: 40%;
   margin:10%;
   margin-left: 20%;
-  border-radius: 10%;
+  border-radius: 50px;
   margin-top: 100px;
   
 }
