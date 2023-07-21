@@ -12,9 +12,7 @@ git push -u origin master
 
 ![S2](https://github.com/kuldeepzack/react_routing/assets/71119191/85e5614a-4271-4567-9e9a-276f87cd9aa6)
 
+![s8](https://github.com/kuldeepzack/react_routing/assets/71119191/9c862bb6-10a9-4173-a8e8-6bcf0d793eec)
 
-
-
-![S4](https://github.com/kuldeepzack/react_routing/assets/71119191/04db8888-2222-4087-a402-c2adeab3d62d)
 
 ![S5](https://github.com/kuldeepzack/react_routing/assets/71119191/46b341aa-15c5-49a5-ac26-dd453d396aee)
